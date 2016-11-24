@@ -1,0 +1,252 @@
+@import "app/libs/superfish/dist/css/superfish"
+@import "app/libs/owl.carousel/dist/assets/owl.carousel.min"
+@import "bourbon"
+@import "sass/vars"
+@import "sass/base"
+@mixin kerning($kerning)
+	letter-spacing: $kerning + px
+
+
+//First screen styles
+
+
+
+header
+	max-height: 100vh
+	position: relative
+	//overflow: hiden
+.head
+	background-size: cover
+	background-image: url(img/bg/22.jpg)
+	overflow: hiden
+	position: relative
+.top-line
+	//position: fixed
+	//border-bottom: 1px dotted $hoverButoonColor
+	background-color: $generalBgColor
+	width: 100%
+	z-index: 999
+	text-align: center
+	font-size: em(16px)
+	ul, li
+		list-style-type: none
+		padding: 0
+		margin: 0
+	.sf-menu
+		display: inline-block
+		float: none
+		margin: 0 auto -6px
+		ul
+			background-color: $generalBgColor
+		li
+			background-color: transparent
+			transition: background-color .4s ease
+			&:hover
+				background-color: $accentBgColor
+			a
+				color: #fff
+				padding: 10px 40px
+				&:hover
+					color: $hoverAccent
+		>li
+			display: inline-block
+
+.button-top-slide
+	left: 100px
+	opacity: 0
+
+.slider-wrap
+	z-index: 1
+	position: relative
+	.slider-nav-container
+		position: relative
+		.slider-nav
+			position: absolute
+			width: 100%
+			z-index: 2
+			color: #fff
+			font-size: em(38px)
+			div
+				cursor: pointer
+				position: absolute
+				top: 300px
+				transition: all .5s ease
+				&:last-child
+					right: 0
+				&:hover
+					color: #fff
+					transform: scale(1.5)
+
+.slider
+	top: 0
+	position: absolute
+	width: 100%
+	overflow-x: hidden
+	.slide-wrap
+		z-index: 2
+		float: left
+		&.active
+			.slide-img-wrap
+				transform: scale(1)
+				opacity: 1
+			h2
+				left: 0px
+				opacity: 1
+			p
+				left: 0px
+				opacity: 1
+			.button-top-slide
+				left: 0px
+				opacity: 1
+	.slide
+		color: #fff
+		margin-top: 150px
+		position: relative
+		&-bg
+			padding-top: 50px
+			padding-bottom: 50px
+			position: relative
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			border-top: 1px dotted $accentBgColor
+			border-bottom: 1px dotted $accentBgColor
+			&::before
+				content: ' '
+				background-color: rgba(115, 150, 255, 0.08)
+				top: 0
+				left: 0
+				width: 100%
+				height: 100%
+				position: absolute
+		&-content
+			position: relative
+			z-index: 1
+	.owl-dots
+		display: inline-block
+		position: relative
+		bottom: 0
+		width: 100%
+		text-align: center
+		.owl-dot
+			z-index: 2
+			width: 40px
+			height: 10px
+			background-color: $generalBgColor
+			border-radius: 3px
+			display: inline-block
+			margin: 5px 5px
+			cursor: pointer
+			border: 1px solid #fff
+			transition: background-color .5s ease
+			&.active
+				background-color: $mainColor
+.content-wr
+	h2
+		position: relative
+		opacity: 0
+		margin: 0
+		left: 100px
+		font-size: em(30px)
+		text-transform: uppercase
+		transition: all 1s ease
+	p
+		position: relative
+		opacity: 0
+		left: 100px
+		margin: 0
+		font-size: em(16px)
+		transition: all 1s ease
+
+.slide-img-wrap
+	padding-top: 15px
+	transform: scale(.8)
+	opacity: 0
+	transition: all 1s
+	img
+		border: 1px solid $mainColor
+		width: 100%
+
+//----------------------//mobile-menu//----------------------------//
+
+.toggle-mnu
+	border: none
+	width: 100%
+	height: 38px
+	position: fixed
+	z-index: 80
+	padding: 0
+	left: 0px
+	top: 0px
+	background-color: $mainButoonColor
+	span
+		transition: all 1.3s
+		display: block
+
+
+$w: 30px
+$h: 3px
+
+.sandwich
+	//border: none
+	width: $w
+	height: $w
+	position: absolute
+	top: 8px
+	//bottom: 0
+	left: 8px
+	right: 0
+	//margin: auto
+	z-index: 4
+.top-mnu
+	color: #fff
+	font-size: em(18px)
+	+kerning (1.5)
+.sw-topper
+	position: relative
+	top: 0
+	width: $w
+	height: $h
+	border: none
+	border-radius: 4px 4px 4px 4px
+	transition: transform 0.5s, top 0.2s
+	display: block
+
+.sw-bottom
+	position: relative
+	width: $w
+	height: $h
+	top: $h * 2.2
+	border: none
+	border-radius: 4px 4px 4px 4px
+	transition: transform 0.5s, top 0.2s
+	transition-delay: 0.2s, 0s
+.sw-footer
+	position: relative
+	width: $w
+	height: $h
+	top: $h * 4.5
+	border: none
+	border-radius: 4px 4px 4px 4px
+	transition: all 0.5s
+	transition-delay: 0.1s
+.sandwich.active
+	.sw-topper
+		top: 9px
+		transform: rotate(-45deg)
+	.sw-bottom
+		top: 6px
+		transform: rotate(45deg)
+	.sw-footer
+		opacity: 0
+		top: 0
+		transform: rotate(180deg)
+
+.sw-topper,
+.sw-bottom,
+.sw-footer
+	transition: background-color .5s ease
+	background: #fff
+	
+	//----------------------//mobile-menu END//----------------------------//

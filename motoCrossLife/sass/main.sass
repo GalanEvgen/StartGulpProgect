@@ -1,0 +1,272 @@
+@import "bourbon"
+@import "vars"
+@import "libs"
+@mixin kerning($kerning)
+	letter-spacing: $kerning + px
+
+.mm-menu
+	&.mm-offcanvas
+		z-index: 90
+	.fa
+		display: none
+
+section
+	min-height: 50px
+	position: relative
+	overflow: hiden
+
+//---------------------------competition section stile start-------------------------//
+.competition
+	z-index: 5
+	background-color: $BgColor
+	position: relative
+.top-text
+	color: #fff
+	position: relative
+	text-align: center
+	h2
+		font-size: em(26px)
+		font-weight: 500
+		margin: 0 0 10px 0
+		padding: 0
+		+kerning (3)
+	.s_descr_wrap
+		text-align: center
+		.s_descr
+			position: relative
+			display: inline-block
+			margin-bottom: 40px
+			font-size: em(16px)
+			text-transform: uppercase
+			font-weight: 500
+			+kerning (2)
+			&::after
+				position: absolute
+				margin-left: -160px
+				margin-top: 35px
+				left: 50%
+				background-color: $mainColor
+				content: ""
+				width: 320px
+				height: 1px
+
+.comp-item
+	position: relative
+	display: block
+	text-align: center
+	background-color: rgba(0, 15, 39, 0.5)
+	margin: 20px 0 10px 0
+	text-align: center
+	border: 1px solid $mainColor
+	&:hover
+		border: 1px solid #fff
+		transition: all 2s
+		.comp-img-wrap
+			.w-svg
+				background-color: $accentWiteBgColor
+	.comp-img-wrap
+		text-align: center
+		img
+			max-width: 100%
+		.w-svg
+			background-color: $hoverButoonColor
+			width: 100%
+			position: absolute
+			left: 0
+			top: 50px
+			padding: 10px 5px 10px 5px
+			transition: all .5s
+	.comp-content
+		img
+			max-width: 100%
+		h3
+			padding: 0
+			color: #fff
+			text-transform: uppercase
+		p
+			padding: 0 15px
+			margin: 0
+			color: #ffffff
+
+
+//---------------------------competition section stile END-------------------------//
+
+//---------------------------galery section stile start-------------------------//
+.galer
+	z-index: 10
+
+.masonry-container
+	padding: 0
+.item
+	margin: 10px 0
+	padding: 0 10px
+	transition: all .5s ease
+	&:hover
+		z-index: 20
+		transform: scale(1.4)
+		img
+			border: 1px solid $mainColor
+	img
+		max-width: 100%
+		transition: all .3s
+//---------------------------galery section stile END-------------------------//
+
+//---------------------------catalog section stile start-------------------------//
+.catalog
+	color: #fff
+	.ajax-container
+		position: relative
+		margin-top: 20px
+		text-align: center
+		.ajax-item
+			position: relative
+			display: inline-block
+			text-align: center
+			border-bottom: 1px solid $mainColor
+			padding: 0
+			.ajax-item-logo
+				text-align: center
+				img
+					height: 100px
+					padding: 3px
+					margin-top: 30px
+					border: 3px solid rgb(212, 47, 47)
+					border-radius: 10em
+					background-color: $accentBgColor
+			.ajax-item-about
+				text-align: center
+				h3
+					margin: 25px 0 5px 0
+					padding: 0
+				p
+					margin: 0
+			.ajax-butt
+				text-align: center
+				.ajax-button
+					padding: 13px 0
+					margin: 50px 10px 30px 10px
+					width: 100%
+					//padding: 13px 70px
+			.ajax-item-checkbox1,
+			.ajax-item-checkbox2,
+				//z-index: 50
+				text-align: center
+				ul,li
+					list-style-type: none
+				ul
+					padding: 0
+					margin-top: 35px
+		
+//---------------------------catalog section stile END-------------------------//
+
+//---------------------------footer section stile start-------------------------//
+
+.main-fut
+	background-size: cover
+	background-image: url(../img/bg/f3.jpg)
+	position: relative
+	color: #fff
+	.wr-foot-logo
+		background-color: $generalBgColor
+		text-align: center
+		margin-top: 20px
+		padding: 20px 0
+		border: 1px solid $mainColor
+		.footer-about
+			font-size: em(18px)
+			margin: 0
+			padding: 20px
+			color: #fff
+	.footer-adress
+		h3
+			margin: 5px 0 15px 0
+			padding: 5px 3px
+			border-bottom: 1px solid $mainColor
+		ul,
+		li
+			margin: 0
+			padding: 0 0 0 10px
+			list-style-type: none
+			font-size: em(16px)
+		li
+			&:hover
+				i
+					transform: scale(1.5)
+					color: $hoverAccent
+			i
+				margin: 0 10px 0 0
+				transition: all .5s ease
+			a
+				color: #fff
+
+	.icon-wr
+		text-align: center
+		ul,li
+			margin: 0
+			list-style-type: none
+			li
+				margin-top: 8px
+				transition: all .5s ease
+				&:hover
+					transform: scale(1.5)
+		a
+			font-size: em(25px)
+			color: $mainColor
+			transition: all .5s ease
+			&:hover
+				color: $hoverAccent
+
+.bottom-text
+	z-index: 0
+	padding: 0
+	img
+		color: #ffffff
+		height: 100px
+	.text-wrap
+		padding: 0
+		margin: 0
+		display: inline-block
+		font-size: em(18px)
+		border-bottom: 3px dotted $mainColor
+		h1
+			font-style: italic
+			font-weight: lighter
+			line-height: 1
+			color: #ffffff
+			margin: 0
+			&:first-letter
+				color: $mainColor
+				font-weight: bold
+//---------------------------footer section stile END-------------------------//
+
+//----------------------------popup form start----------------------//
+.hidden
+	display: none
+
+.participate
+	padding: 20px 30px
+	text-align: left
+	max-width: 400px
+	margin: 40px auto
+	position: relative
+	color: #fff
+
+.form-group
+	display: block
+	margin-bottom: 30px
+	.color_element
+		font-weight: 700
+		font-size: 18px
+	.text-danger
+		font-size: 11px
+		margin-top: 5px
+		display: block
+	input,
+	textarea
+		display: block
+		width: 100%
+		margin-top: 5px
+		line-height: 40px
+		text-indent: 12px
+
+@import "media"
