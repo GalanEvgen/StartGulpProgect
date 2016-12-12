@@ -9,6 +9,8 @@ $(function () {
 	$(window).resize(function () {
 		heightDetect();
 	});
+	
+	
 
 	$(".top-text h1").animated("fadeIn", "fadeOutUp");
 	$(".top-text p").animated("fadeInUp", "fadeOutDown");
